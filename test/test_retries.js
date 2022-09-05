@@ -23,7 +23,7 @@ describe('Retries', function () {
     });
 
     afterEach(function (done) {
-        queue.collection.remove({}, done);
+        queue.collection.deleteMany({}, done);
     });
 
     describe('worker retrying job', function () {

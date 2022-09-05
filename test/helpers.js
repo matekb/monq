@@ -1,9 +1,12 @@
 var async = require('async');
-var mongo = require('mongojs');
+const {
+  MongoClient
+} = require('mongodb')
 
 exports.uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/monq_tests';
 
-exports.db = mongo(exports.uri, [], { safe: true });
+const client = new MongoClient(exports.uri)
+exports.db = client.db('ecp')
 
 exports.each = function (fixture, fn, done) {
     async.each(fixture, function (args, callback) {

@@ -18,7 +18,7 @@ describe('Priority', function () {
     });
 
     afterEach(function (done) {
-        queue.collection.remove({}, done);
+        queue.collection.deleteMany({}, done);
     });
 
     describe('worker with no minimum priority', function () {

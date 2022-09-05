@@ -10,7 +10,7 @@ describe('Job', function () {
     });
 
     afterEach(function (done) {
-        collection.remove({}, done);
+        collection.deleteMany({}, done);
     });
 
     it('has data object', function () {
